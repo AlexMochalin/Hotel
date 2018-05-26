@@ -1,0 +1,125 @@
+@margin-top-gap: 100px;
+@opasity: 0.5;
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  src: url('../fonts/opensans/opensans-regular.ttf');
+}
+@font-face {
+  font-family: 'oswald-regular';
+  font-weight: 400;
+  src: url('../fonts/oswald/oswald-regular.ttf');
+}
+.respond-to(@device, @content) {
+	& when (@device = phones) {
+		@media all and (max-width: 479px) { @content(); }
+	}
+	& when (@device = wide-phones) {
+		@media all and (min-width: 480px) and (max-width: 767px) { @content(); }
+	}
+	& when (@device = tablets) {
+		@media all and (min-width: 768px) and (max-width: 991px) { @content(); }
+	}
+	& when (@device = small-desktops) {
+		@media all and (min-width: 992px) and (max-width: 1199px) { @content(); }
+	}
+	& when (@device = lg-desktops) {
+		@media all and (min-width: 1200px) and (max-width: 1440px) { @content(); }
+	}
+	& when (@device = xlg-desktops) {
+		@media all and (min-width: 1441px) { @content(); }
+	}
+}
+.WhiteTitleMixin() {
+	font-family: 'oswald-regular', 'Arial', sans-serif;
+	color:  #ffffff;
+	font-size: 92px;
+	line-height: 98px;
+	text-align: left;
+	text-transform: uppercase;
+}
+.MainTitleMixin() {
+	font-family: 'oswald-regular', 'Arial', sans-serif;
+	text-align: center;
+	color:  #000000;
+	font-size: 45px;
+	text-transform: uppercase;
+}
+.TitleMixin() {
+	font-family: 'Open Sans', sans-serif;
+	color:  #010101;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	text-align: left;
+}
+.TextMixin() {
+	font-family: 'Open Sans', sans-serif;
+	color:  #010101;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 24px;
+	text-align: left;
+}
+.MoreButtonMixin() {
+	font-family: 'oswald-regular', 'Arial', sans-serif;
+	display: flex;
+	width: 170px;
+	height: 52px;
+	padding: 7px;
+	color: #4e26fd;
+	border: 2px solid #4e26fd;
+	font-size: 24px;
+	text-align: center;
+	text-transform: uppercase;
+	justify-content: center;
+	margin: 0 auto;
+	box-sizing: border-box;
+	margin-top: 40px;
+	transition-duration: .5s;
+	&:hover {
+		opacity: 0.6;
+		text-decoration: none;
+		}
+}
+.LogoStarsMixin() {
+	background-image: url('../img/star_logo.png');
+	position: absolute;
+	width: 12px;
+	height: 12px;
+}
+.FontsAdressMixin() {
+	font-family: 'Open Sans', sans-serif;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: justify;
+	line-height: 30px;
+}
+.SocialIconMixin() {
+	width: 34px;
+	height: 34px;
+	display: block;
+	border: 1px solid #ffffff;
+}
+.SocialIconHoverMixin() {
+	border: 1px solid rgb(77,37,253);
+	transition-duration: .5s;
+    transform: scale(1.2, 1.2);
+}
+.SmallDisplayTitleTextMixin() {
+	font-size: 27px;
+	line-height: 27px;
+	text-align: center;
+}
+.HoverOpasityMixin(@opasity) {
+	&:hover {
+		opacity: @opasity;
+	}
+}
+.HoverMoveDeluxeMixin() {
+	&:hover img {
+			transform: perspective(1800px) translate3d(0, 0, 600px);
+    		transition-duration: .4s;
+		}
+}
